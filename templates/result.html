@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prediction Result</title>
+    <style>
+        body {
+            background-color: #c1aeb1; /* Light pink background */
+            font-family: 'Arial', sans-serif; /* Use a common font for better readability */
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh; /* Center content vertically on the page */
+        }
+
+        h1 {
+            color: #333;
+            text-align: center;
+        }
+
+        h2 {
+            color: #555;
+            text-align: center;
+        }
+
+        h3 {
+            color: #550A35	; /* Blue color for emphasis */
+            text-align: center;
+        }
+
+        p {
+            color: #dc3545; /* Red color for error messages */
+            text-align: center;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div>
+        <h1>Prediction Result</h1>
+
+        {% if model_type == 'lr' %}
+        <h2>Linear Regression Model:</h2>
+        <h3>The predicted salary for the given years of experience is: {{ prediction }}</h3>
+        {% else %}
+        <p>Invalid model type</p>
+        {% endif %}
+    </div>
+
+</body>
+
+</html>
